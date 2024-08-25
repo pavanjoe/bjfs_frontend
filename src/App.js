@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 export default function Component() {
-  const [input, setInput] = useState('{"data":["M","1","334","4","B","e","d"]}');
+  const [input, setInput] = useState('');
   const [result, setResult] = useState(null);
   const [filter, setFilter] = useState('numbers');
 
@@ -10,7 +10,7 @@ export default function Component() {
     e.preventDefault();
     try {
       const parsedInput = JSON.parse(input);
-      const response = await fetch('/bfhl', {
+      const response = await fetch('https://bjfs-backend.onrender.com/bfhl', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
